@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Custom";
+  src: url("/https://a-savage.com/static/media/leitura-roman_1-webfont.f5771a76.woff2"),
+  url(https://a-savage.com/static/media/leitura-roman_1-webfont.9181f8c7.woff)
+  format("woff");
+}
+
+body {
+  font-family: "Custom" ;
+}
