@@ -692,7 +692,7 @@ function Project() {
                   </div>
 
                   <div className="content-heading">
-                    <p style={{ fontSize: "18px" }}>
+                    <p style={{ fontSize: "18px", fontFamily: 'system-ui' }}>
                       • 100% Shiraz grown & handpicked in Redesdale, VIC <br />
                       • Picked 8 March 2021
                       <br />

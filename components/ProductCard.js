@@ -58,21 +58,20 @@ const ProductCard = props => {
         </div>
 
         {/* Name + Rating */}
-        <div style={{fontFamily: "Custom"}} className="mt-4 sm:mt-8">
+        <div style={{fontFamily: "Basis Grotesque, sans-serif", fontWeight: '500'}} className="mt-4 sm:mt-8">
           <p className="font-semibold text-lg capitalize">{props.name}</p>
         </div>
 
         {/* Price + CTA */}
-        <div style={{fontFamily: "Custom"}} className="mt-4 flex items-center justify-between space-x-2">
+        <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
             <p className="text-gray-500">Price</p>
-            <p className="text-lg font-semibold">
-              {formatCurrency(props.price, props.currency)}
+            <p style={{fontFamily: "Basis Grotesque, sans-serif", fontWeight: '500'}} className="text-lg font-semibold">
+              $ {props.price/100}
             </p>
           </div>
 
           <button
-           style={{fontFamily: "Custom"}}
             type="button"
             onClick={handleOnAddToCart}
             disabled={adding || props.disabled}

@@ -695,7 +695,7 @@ function Project() {
                   </div>
 
                   <div className="content-heading">
-                    <p style={{ fontSize: "18px" }}>
+                    <p style={{ fontSize: "18px", fontFamily: 'system-ui' }}>
                       • 35% Shiraz, 28% Merlot, 11% Cabernet Sauvignon, 24%
                       Cabernet Franc grown & handpicked in Redesdale, VIC <br />
                       • Picked 8 March 2021

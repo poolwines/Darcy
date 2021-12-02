@@ -695,7 +695,7 @@ function Project() {
                   </div>
 
                   <div className="content-heading">
-                    <p style={{ fontSize: "18px" }}>
+                    <p style={{ fontSize: "18px", fontFamily: 'system-ui' }}>
                       • 80% Vermentino 20% Moscato Giallo handpicked & grown by
                       the Chalmers Family in Colbinabbin, Vic <br />
                       • Vermentino de-stemmed onto whole bunch Giallo and

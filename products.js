@@ -49,30 +49,30 @@ const products = [
 •	Free Vic shipping on any 6+ bottles<br /><br />
     `,
   },
-//   {
-//     id: "price_1Jus2oEZ0lUugcxDmmMcZs9A",
-//     name: "2021 GOLD",
-//     price: 2800,
-//     currency: "AUD",
-//     image: "/WEBSHOP_GOLD-min.jpg",
-//     image2: "/GOLD_IMAGEB-min.png",
-//     rating: {
-//       count: 137,
-//       rate: 4.5,
-//     },
-//     stock: `In stock`,
-//     description: `
-//     •	80% Vermentino 20% Moscato Giallo handpicked and grown by the Chalmers Family in Colbinabbin, VIC <br />
-// •	Vermentino de-stemmed onto whole bunch Giallo and macerated for 5 months in inox with no pigeage<br />
-// •	Wild ferment<br />
-// •	Basket Pressed back into inox<br />
-// •	Unfined/unfiltered<br />
-// •	Bottled straight from lees<br />
-// •	11.3% ABV<br />
-// •	No sulphur added ever<br /><br />
-// •	Free Vic shipping on any 6+ bottles<br /><br />
-//     `,
-//   },
+  {
+    id: "price_1Jus2oEZ0lUugcxDmmMcZs9A",
+    name: "2021 GOLD",
+    price: 2800,
+    currency: "AUD",
+    image: "/WEBSHOP_GOLD-min.jpg",
+    image2: "/GOLD_IMAGEB-min.png",
+    rating: {
+      count: 137,
+      rate: 4.5,
+    },
+    stock: `In stock`,
+    description: `
+    •	80% Vermentino 20% Moscato Giallo handpicked and grown by the Chalmers Family in Colbinabbin, VIC <br />
+•	Vermentino de-stemmed onto whole bunch Giallo and macerated for 5 months in inox with no pigeage<br />
+•	Wild ferment<br />
+•	Basket Pressed back into inox<br />
+•	Unfined/unfiltered<br />
+•	Bottled straight from lees<br />
+•	11.3% ABV<br />
+•	No sulphur added ever<br /><br />
+•	Free Vic shipping on any 6+ bottles<br /><br />
+    `,
+  },
 ];
 
 export default products;

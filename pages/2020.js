@@ -695,7 +695,7 @@ function Project() {
                   </div>
 
                   <div className="content-heading">
-                    <p style={{ fontSize: "18px" }}>
+                    <p style={{ fontSize: "18px", fontFamily: 'system-ui' }}>
                       • 100% Shiraz grown & handpicked in Harcourt, VIC <br />•
                       90% macerated for 10 days then into old French Barriques{" "}
                       <br />

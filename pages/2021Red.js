@@ -697,7 +697,7 @@ function Project() {
                   </div>
 
                   <div className="content-heading">
-                    <p style={{ fontSize: "18px" }}>
+                    <p style={{ fontSize: "18px", fontFamily: 'system-ui' }}>
                       • 100% Shiraz grown & handpicked in Redesdale, VIC <br />
                       • 60% de-stemmed and macerated for 10 days, basket pressed
                       into old French Barriques
