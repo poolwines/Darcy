@@ -13,7 +13,7 @@ const Success = () => {
   const { clearCart } = useShoppingCart();
 
   const { data, error } = useSWR(
-    () => `https://poolwines.net/api/checkout_sessions/${session_id}`,
+    () => `/api/checkout_sessions/${session_id}`,
     fetcher
   );
 
