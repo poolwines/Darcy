@@ -568,7 +568,7 @@ function index({ res2 }) {
 export default index;
 
 export async function getServerSideProps() {
-  const res1 = await fetch(`https://darcy-ecom.vercel.app/api/getProducts`, {
+  const res1 = await fetch(`https://poolwines.net/api/getProducts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -90,19 +90,16 @@ export default function SignUp() {
       data.email.includes("@") &&
       data.password.length > 6
     ) {
-      const res = await fetch(
-        `https://darcy-ecom.vercel.app/api/admin/signin`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: data.email,
-            password: data.password,
-          }),
-        }
-      );
+      const res = await fetch(`https://poolwines.net/api/admin/signin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
 
       const res2 = await res.json();
       if (res2.error == "No User Found") {
