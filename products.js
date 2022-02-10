@@ -60,7 +60,7 @@ const products = [
       count: 137,
       rate: 4.5,
     },
-    stock: `In stock`,
+    stock: `Out of stock`,
     description: `
     •	80% Vermentino 20% Moscato Giallo handpicked and grown by the Chalmers Family in Colbinabbin, VIC <br />
 •	Vermentino de-stemmed onto whole bunch Giallo and macerated for 5 months in inox with no pigeage<br />
@@ -76,3 +76,4 @@ const products = [
 ];
 
 export default products;
+

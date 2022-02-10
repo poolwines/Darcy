@@ -5,11 +5,23 @@ import { formatCurrency } from "@/lib/utils";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import { ProductCard } from "@/components/index";
-import products from "products";
 function projects() {
   const { totalPrice, cartCount } = useShoppingCart();
 
   const [disabled, setDisabled] = useState(false);
+
+  const [products2, setProducts2] = useState()
+  React.useEffect(async() => {
+  const res1 = await fetch("http://localhost:3000/api/getProducts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+  const { products } = await res1.json();
+  setProducts2(products)
+}, []);
 
   return (
     <nav className="main-menu" role="navigation">
@@ -555,7 +567,7 @@ function projects() {
           </div>
           <div className="projects-list-wrapper fade-in">
             <ul className="projects-list fade-in">
-                {products.map((product) => (
+                {products2 ? products2.map((product) => (
                   <li
                     className="projects-list-item circle-link-container"
                     style={{margin: 'auto', border: '#6B725F 1px solid', padding: '2rem', marginBottom: '1rem'}}
@@ -568,7 +580,7 @@ function projects() {
                       {...product}
                     />
                   </li>
-                ))}
+                )) : null}
             </ul>
           </div>
         </div>

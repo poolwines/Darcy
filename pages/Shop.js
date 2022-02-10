@@ -1,11 +1,13 @@
 import React from "react";
-import Image from "next/image";
-import Projects from "../components/projects2";
-import img1 from "../public/GOLD_IMAGEB-min.png";
-import img2 from "../public/BLUSH_IMAGEB-min.png";
-import img3 from "../public/RED_IMAGEB-min.png";
 import Link from "next/link";
-function index() {
+import { useShoppingCart } from "@/hooks/use-shopping-cart";
+import { useState } from "react";
+import Projects from "../components/projects2";
+function index({ res2 }) {
+  const { totalPrice, cartCount } = useShoppingCart();
+
+  const [disabled, setDisabled] = useState(false);
+
   return (
     <div id="mount-point">
       <style jsx>{`
@@ -564,3 +566,18 @@ function index() {
 }
 
 export default index;
+
+export async function getServerSideProps() {
+  const res1 = await fetch(`http://localhost:3000/api/getProducts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+  const res2 = await res1.json();
+
+  return {
+    props: { res2 },
+  };
+}
