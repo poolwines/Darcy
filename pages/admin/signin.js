@@ -90,7 +90,7 @@ export default function SignUp() {
       data.email.includes("@") &&
       data.password.length > 6
     ) {
-      const res = await fetch(`http://localhost:3000/api/admin/signin`, {
+      const res = await fetch(`https://poolwines.net/api/admin/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

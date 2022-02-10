@@ -42,19 +42,19 @@ const Product = (props) => {
     });
     setQty(1);
   }, [cartCount]);
-  
-  const [products2, setProducts2] = useState()
-  useEffect(async() => {
-  const res1 = await fetch("http://localhost:3000/api/getProducts", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
-  });
-  const { products } = await res1.json();
-  setProducts2(products)
-}, []);
+
+  const [products2, setProducts2] = useState();
+  useEffect(async () => {
+    const res1 = await fetch("https://poolwines.net/api/getProducts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+    });
+    const { products } = await res1.json();
+    setProducts2(products);
+  }, []);
 
   return (
     <div>
@@ -877,25 +877,27 @@ const Product = (props) => {
                 </div>
                 <div className="projects-list-wrapper fade-in">
                   <ul className="projects-list fade-in">
-                    {products2 ? products2.map((product) => (
-                      <li
-                        className="projects-list-item circle-link-container"
-                        style={{
-                          margin: "auto",
-                          border: "#6B725F 1px solid",
-                          padding: "2rem",
-                          marginBottom: "1rem",
-                        }}
-                      >
-                        <ProductCard
-                          key={product.id}
-                          disabled={disabled || props.stock != "In stock"}
-                          onClickAdd={() => setDisabled(true)}
-                          onAddEnded={() => setDisabled(false)}
-                          {...product}
-                        />
-                      </li>
-                    )) : null}
+                    {products2
+                      ? products2.map((product) => (
+                          <li
+                            className="projects-list-item circle-link-container"
+                            style={{
+                              margin: "auto",
+                              border: "#6B725F 1px solid",
+                              padding: "2rem",
+                              marginBottom: "1rem",
+                            }}
+                          >
+                            <ProductCard
+                              key={product.id}
+                              disabled={disabled || props.stock != "In stock"}
+                              onClickAdd={() => setDisabled(true)}
+                              onAddEnded={() => setDisabled(false)}
+                              {...product}
+                            />
+                          </li>
+                        ))
+                      : null}
                   </ul>
                 </div>
               </div>
@@ -908,7 +910,7 @@ const Product = (props) => {
 };
 
 export async function getStaticPaths() {
-  const res1 = await fetch("http://localhost:3000/api/getProducts", {
+  const res1 = await fetch("https://poolwines.net/api/getProducts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -928,7 +930,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res1 = await fetch("http://localhost:3000/api/getProducts", {
+  const res1 = await fetch("https://poolwines.net/api/getProducts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -936,11 +938,10 @@ export async function getStaticProps({ params }) {
     body: JSON.stringify({}),
   });
   const { products } = await res1.json();
-  console.log('products2')
-  console.log(products)
+  console.log("products2");
+  console.log(products);
 
   try {
-
     const props = products?.find((product) => product.id === params.id) ?? {};
 
     return {
@@ -958,7 +959,7 @@ export async function getStaticProps({ params }) {
 export default Product;
 
 // export async function getServerSideProps({params}) {
-//   const res1 = await fetch(`http://localhost:3000/api/getProducts`, {
+//   const res1 = await fetch(`https://poolwines.net/api/getProducts`, {
 //     method: "POST",
 //     headers: {
 //       "Content-Type": "application/json",

@@ -79,7 +79,7 @@ function Profile({ res2, res4 }) {
   const deleteHandler = async (event, id) => {
     event.preventDefault();
     const result = await fetch(
-      `http://localhost:3000/api/admin/deleteProduct`,
+      `https://poolwines.net/api/admin/deleteProduct`,
       {
         method: "POST",
         headers: {
@@ -176,7 +176,7 @@ function Profile({ res2, res4 }) {
   const createProduct = async (e) => {
     e.preventDefault();
     const result = await fetch(
-      `http://localhost:3000/api/admin/createProduct`,
+      `https://poolwines.net/api/admin/createProduct`,
       {
         method: "POST",
         headers: {
@@ -201,7 +201,7 @@ function Profile({ res2, res4 }) {
   const updateUser = async (e) => {
     e.preventDefault();
     const result = await fetch(
-      `http://localhost:3000/api/admin/updateProduct`,
+      `https://poolwines.net/api/admin/updateProduct`,
       {
         method: "POST",
         headers: {
@@ -406,7 +406,9 @@ function Profile({ res2, res4 }) {
             </Grid>
             <Grid item xs={12}>
               <Box className={classes2.editor}>
-                <p style={{ textAlign: "left" }}>Description (Max length : 400)</p>
+                <p style={{ textAlign: "left" }}>
+                  Description (Max length : 400)
+                </p>
                 <QuillNoSSRWrapper
                   value={description}
                   onChange={setDescription}
@@ -505,7 +507,9 @@ function Profile({ res2, res4 }) {
             </Grid>
             <Grid item xs={12}>
               <Box className={classes2.editor}>
-                <p style={{ textAlign: "left" }}>Description (Max length : 400)</p>
+                <p style={{ textAlign: "left" }}>
+                  Description (Max length : 400)
+                </p>
                 <QuillNoSSRWrapper
                   value={description2}
                   onChange={setDescription2}
