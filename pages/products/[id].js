@@ -909,57 +909,8 @@ const Product = (props) => {
   );
 };
 
-// export async function getStaticPaths() {
-//   const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({}),
-//   });
-//   const { products } = await res1.json();
-
-//   return {
-//     // Existing posts are rendered to HTML at build time
-//     paths: Object.keys(products)?.map((id) => ({
-//       params: { id },
-//     })),
-//     // Enable statically generating additional pages
-//     fallback: true,
-//   };
-// }
-
-// export async function getStaticProps({ params }) {
-//   const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({}),
-//   });
-//   const { products } = await res1.json();
-//   console.log("products2");
-//   console.log(products);
-
-//   try {
-//     const props = products?.find((product) => product.id === params.id) ?? {};
-
-//     return {
-//       props,
-//       // Next.js will attempt to re-generate the page:
-//       // - When a request comes in
-//       // - At most once every second
-//       revalidate: 1, // In seconds
-//     };
-//   } catch (error) {
-//     return { notFound: true };
-//   }
-// }
-
-export default Product;
-
-export async function getServerSideProps({ params }) {
-  const res1 = await fetch(`https://www.poolwines.net/api/getProducts`, {
+export async function getStaticPaths() {
+  const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -967,9 +918,58 @@ export async function getServerSideProps({ params }) {
     body: JSON.stringify({}),
   });
   const { products } = await res1.json();
-  const props = products?.find((product) => product.id === params.id) ?? {};
 
   return {
-    props,
+    // Existing posts are rendered to HTML at build time
+    paths: Object.keys(products)?.map((id) => ({
+      params: { id },
+    })),
+    // Enable statically generating additional pages
+    fallback: true,
   };
 }
+
+export async function getStaticProps({ params }) {
+  const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+  const { products } = await res1.json();
+  console.log("products2");
+  console.log(products);
+
+  try {
+    const props = products?.find((product) => product.id === params.id) ?? {};
+
+    return {
+      props,
+      // Next.js will attempt to re-generate the page:
+      // - When a request comes in
+      // - At most once every second
+      revalidate: 1, // In seconds
+    };
+  } catch (error) {
+    return { notFound: true };
+  }
+}
+
+export default Product;
+
+// export async function getServerSideProps({ params }) {
+//   const res1 = await fetch(`https://www.poolwines.net/api/getProducts`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({}),
+//   });
+//   const { products } = await res1.json();
+//   const props = products?.find((product) => product.id === params.id) ?? {};
+
+//   return {
+//     props,
+//   };
+// }

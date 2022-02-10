@@ -132,83 +132,85 @@ export default function SignUp() {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <div data-aos="fade-right" className={styles.tokenSale}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Admin Sign in
-          </Typography>
-          <form className={classes.form} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  disabled={state}
-                  id="email"
-                  onChange={(e) => handleChange(e)}
-                  value={data.email}
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
+    <>
+      <div data-aos="fade-right" className={styles.tokenSale}>
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Admin Sign in
+            </Typography>
+            <form className={classes.form} noValidate>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    disabled={state}
+                    id="email"
+                    onChange={(e) => handleChange(e)}
+                    value={data.email}
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password (More than 6 Characters)"
+                    type="password"
+                    id="password"
+                    disabled={state}
+                    onChange={(e) => handleChange(e)}
+                    value={data.password}
+                    autoComplete="current-password"
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password (More than 6 Characters)"
-                  type="password"
-                  id="password"
-                  disabled={state}
-                  onChange={(e) => handleChange(e)}
-                  value={data.password}
-                  autoComplete="current-password"
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              onClick={(e) => handleSubmit(e)}
-              className={classes.submit}
-            >
-              Log In
-            </Button>
-          </form>
-        </div>
-        <Box mt={5}></Box>
-      </Container>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          Invalid Input
-        </Alert>
-      </Snackbar>
-      <Snackbar open={open2} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          You have been LoggedIn! Redirecting to Profile Page
-        </Alert>
-      </Snackbar>
-      <Snackbar open={open3} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          No User Found!
-        </Alert>
-      </Snackbar>
-      <Snackbar open={open4} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          Approval Pending. Try Later
-        </Alert>
-      </Snackbar>
-    </div>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={(e) => handleSubmit(e)}
+                className={classes.submit}
+              >
+                Log In
+              </Button>
+            </form>
+          </div>
+          <Box mt={5}></Box>
+        </Container>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            Invalid Input
+          </Alert>
+        </Snackbar>
+        <Snackbar open={open2} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success">
+            You have been LoggedIn! Redirecting to Profile Page
+          </Alert>
+        </Snackbar>
+        <Snackbar open={open3} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            No User Found!
+          </Alert>
+        </Snackbar>
+        <Snackbar open={open4} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            Approval Pending. Try Later
+          </Alert>
+        </Snackbar>
+      </div>
+    </>
   );
 }
 

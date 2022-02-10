@@ -20,6 +20,8 @@ import { Box, Button, Grid, makeStyles, TextField } from "@material-ui/core";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import Header from "../../component/header";
+
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
   ssr: false,
   loading: () => <p>Loading ...</p>,
@@ -301,6 +303,7 @@ function Profile({ res2, res4 }) {
 
   return (
     <div>
+      <Header />
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
           <Card>
