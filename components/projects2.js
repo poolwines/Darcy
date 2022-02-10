@@ -12,7 +12,7 @@ function projects() {
 
   const [products2, setProducts2] = useState();
   React.useEffect(async () => {
-    const res1 = await fetch("https://poolwines.net/api/getProducts", {
+    const res1 = await fetch("https://darcy-ecom.vercel.app/api/getProducts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
