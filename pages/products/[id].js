@@ -45,7 +45,7 @@ const Product = (props) => {
 
   const [products2, setProducts2] = useState();
   useEffect(async () => {
-    const res1 = await fetch("https://poolwines.net/api/getProducts", {
+    const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -910,7 +910,7 @@ const Product = (props) => {
 };
 
 // export async function getStaticPaths() {
-//   const res1 = await fetch("https://poolwines.net/api/getProducts", {
+//   const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
 //     method: "POST",
 //     headers: {
 //       "Content-Type": "application/json",
@@ -930,7 +930,7 @@ const Product = (props) => {
 // }
 
 // export async function getStaticProps({ params }) {
-//   const res1 = await fetch("https://poolwines.net/api/getProducts", {
+//   const res1 = await fetch("https://www.poolwines.net/api/getProducts", {
 //     method: "POST",
 //     headers: {
 //       "Content-Type": "application/json",
@@ -958,15 +958,15 @@ const Product = (props) => {
 
 export default Product;
 
-export async function getServerSideProps({params}) {
-  const res1 = await fetch(`https://poolwines.net/api/getProducts`, {
+export async function getServerSideProps({ params }) {
+  const res1 = await fetch(`https://www.poolwines.net/api/getProducts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({}),
   });
-  const {products} = await res1.json();
+  const { products } = await res1.json();
   const props = products?.find((product) => product.id === params.id) ?? {};
 
   return {

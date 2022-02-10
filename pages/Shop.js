@@ -568,7 +568,7 @@ function index({ res2 }) {
 export default index;
 
 export async function getServerSideProps() {
-  const res1 = await fetch(`https://poolwines.net/api/getProducts`, {
+  const res1 = await fetch(`https://www.poolwines.net/api/getProducts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

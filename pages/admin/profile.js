@@ -79,7 +79,7 @@ function Profile({ res2, res4 }) {
   const deleteHandler = async (event, id) => {
     event.preventDefault();
     const result = await fetch(
-      `https://poolwines.net/api/admin/deleteProduct`,
+      `https://www.poolwines.net/api/admin/deleteProduct`,
       {
         method: "POST",
         headers: {
@@ -176,7 +176,7 @@ function Profile({ res2, res4 }) {
   const createProduct = async (e) => {
     e.preventDefault();
     const result = await fetch(
-      `https://poolwines.net/api/admin/createProduct`,
+      `https://www.poolwines.net/api/admin/createProduct`,
       {
         method: "POST",
         headers: {
@@ -201,7 +201,7 @@ function Profile({ res2, res4 }) {
   const updateUser = async (e) => {
     e.preventDefault();
     const result = await fetch(
-      `https://poolwines.net/api/admin/updateProduct`,
+      `https://www.poolwines.net/api/admin/updateProduct`,
       {
         method: "POST",
         headers: {
