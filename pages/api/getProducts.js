@@ -1,6 +1,15 @@
 require("dotenv").config();
 
 export default async (req, res) => {
+
+  res.setHeader("Access-Control-Allow-Origin", "https://frontendname.netlify.app/");
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+
+  
   const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
   const products = await stripe.products.list({});
