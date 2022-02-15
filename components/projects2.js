@@ -580,7 +580,7 @@ function projects() {
                     >
                       <ProductCard
                         key={product.id}
-                        disabled={disabled}
+                        disabled={disabled || product.stock != "In stock"}
                         onClickAdd={() => setDisabled(true)}
                         onAddEnded={() => setDisabled(false)}
                         {...product}
