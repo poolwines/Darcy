@@ -890,7 +890,7 @@ const Product = (props) => {
                           >
                             <ProductCard
                               key={product.id}
-                              disabled={disabled || props.stock != "In stock"}
+                              disabled={disabled || product.stock != "In stock"}
                               onClickAdd={() => setDisabled(true)}
                               onAddEnded={() => setDisabled(false)}
                               {...product}
